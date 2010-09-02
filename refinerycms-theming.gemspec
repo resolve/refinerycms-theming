@@ -11,5 +11,5 @@ Gem::Specification.new do |s|
 
   s.has_rdoc = true
 
-  s.add_dependency('refinerycms', '0.9.8')
+  s.add_dependency('refinerycms', '~> 0.9.8')
 end
