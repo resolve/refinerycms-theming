@@ -1,5 +1,3 @@
-#version = File.read(File.expand_path("../../REFINERY_VERSION", __FILE__)).strip
-
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'refinerycms-theming'
@@ -13,5 +11,5 @@ Gem::Specification.new do |s|
 
   s.has_rdoc = true
 
-  s.add_dependency('refinerycms-core', version)
+  s.add_dependency('refinerycms', '0.9.8')
 end
