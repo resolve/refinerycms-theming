@@ -3,7 +3,6 @@ class RefineryThemeGenerator < Rails::Generators::Base
   argument :theme_name, :type => :string
 
   def create_theme
-
     copy_file "stylesheets/application.css", "themes/#{theme_name}/stylesheets/application.css"
     copy_file "stylesheets/formatting.css", "themes/#{theme_name}/stylesheets/formatting.css"
     copy_file "stylesheets/home.css", "themes/#{theme_name}/stylesheets/home.css"
@@ -14,7 +13,7 @@ class RefineryThemeGenerator < Rails::Generators::Base
     copy_file "views/pages/home.html.erb", "themes/#{theme_name}/views/pages/home.html.erb"
 
 	if RefinerySetting.theme.nil?
-		RefinerySetting.find_or_set('theme', theme_name)
+		RefinerySetting.find_or_set(:theme, theme_name)
 		puts "NOTE: \"theme\" setting created and set to #{theme_name}"
 	else
 		puts 'NOTE: If you want this new theme to be the current theme used, set the "theme" setting in the Refinery backend to the name of this theme.' unless RAILS_ENV == "test"
