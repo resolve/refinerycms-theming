@@ -12,12 +12,12 @@ class RefineryThemeGenerator < Rails::Generators::Base
     copy_file "views/pages/show.html.erb", "themes/#{theme_name}/views/pages/show.html.erb"
     copy_file "views/pages/home.html.erb", "themes/#{theme_name}/views/pages/home.html.erb"
 
-	if RefinerySetting.theme.nil?
-		RefinerySetting.find_or_set(:theme, theme_name)
-		puts "NOTE: \"theme\" setting created and set to #{theme_name}"
-	else
-		puts 'NOTE: If you want this new theme to be the current theme used, set the "theme" setting in the Refinery backend to the name of this theme.' unless RAILS_ENV == "test"
-	end
+    if RefinerySetting.get(:theme).nil?
+      RefinerySetting.set(:theme, theme_name)
+      puts "NOTE: \"theme\" setting created and set to #{theme_name}"
+    else
+      puts 'NOTE: If you want this new theme to be the current theme used, set the "theme" setting in the Refinery backend to the name of this theme.' unless RAILS_ENV == "test"
+    end
   end
 
 end
