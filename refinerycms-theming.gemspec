@@ -2,7 +2,7 @@ Gem::Specification.new do |s|
   s.name              = %q{refinerycms-theming}
   s.version           = %q{0.9.8}
   s.description       = %q{Theming functionality for the Refinery CMS project, extracted from Refinery CMS core.}
-  s.date              = %q{2010-09-06}
+  s.date              = %q{2010-09-17}
   s.summary           = %q{Theming functionality for the Refinery CMS project.}
   s.email             = %q{info@refinerycms.com}
   s.homepage          = %q{http://refinerycms.com}
@@ -38,6 +38,7 @@ Gem::Specification.new do |s|
     'lib/generators/refinery_theme/templates/views/pages/home.html.erb',
     'lib/generators/refinery_theme/templates/views/pages/show.html.erb',
     'lib/generators/refinery_theme/USAGE',
+    'lib/refinerycms-theming.rb',
     'lib/theme_server.rb',
     'lib/theming.rb',
     'license.md',
