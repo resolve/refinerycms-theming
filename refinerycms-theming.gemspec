@@ -11,7 +11,6 @@ Gem::Specification.new do |s|
 
   s.files             = [
     'app',
-    'app/helpers',
     'app/models',
     'app/models/theme.rb',
     'features',
