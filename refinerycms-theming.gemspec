@@ -1,8 +1,8 @@
 Gem::Specification.new do |s|
   s.name              = %q{refinerycms-theming}
-  s.version           = %q{0.9.8}
+  s.version           = %q{0.9.8.1}
   s.description       = %q{Theming functionality for the Refinery CMS project, extracted from Refinery CMS core.}
-  s.date              = %q{2010-09-17}
+  s.date              = %q{2010-09-28}
   s.summary           = %q{Theming functionality for the Refinery CMS project.}
   s.email             = %q{info@refinerycms.com}
   s.homepage          = %q{http://refinerycms.com}
@@ -12,7 +12,6 @@ Gem::Specification.new do |s|
   s.files             = [
     'app',
     'app/helpers',
-    'app/helpers/themes_helper.rb',
     'app/models',
     'app/models/theme.rb',
     'features',
@@ -83,6 +82,6 @@ Gem::Specification.new do |s|
     'themes/hemingway/views/layouts/application.html.erb'
   ]
   
-  
+
   s.add_dependency('refinerycms', '>= 0.9.8')
 end
