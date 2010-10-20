@@ -57,7 +57,7 @@ Let's take the ``mytheme`` example theme shown above. This is how the theme is s
             |- layouts
                  |- application.html.erb
 
-   
+
 ### Images
 
 Usually this would be just what you have in ``public/images`` except we move that to the theme instead.
@@ -73,7 +73,7 @@ The ``README`` file is just a description of your theme.
 ### Partials && /shared Content
 
 In the default views, you will notice lines such as:
-  
+
     <%= render :partial => '/shared/header' %>
 
 These are built-in partials for RefineryCMS. To __override__ these partials, run the command:
@@ -92,7 +92,7 @@ You can add your own sections or rename these as you'd like. Say you wanted to a
        {:yield => :body_content_title, :fallback => page_title, :id => 'body_content_page_title', :title => true},
        {:yield => :body_content_sidebar, :fallback => nil},
        {:yield => :body_content_left, :fallback => (@page.present? ? @page[Page.default_parts.first.to_sym] : nil)},
-       {:yield => :body_content_right, :fallback => (@page.present? ? @page[Page.default_parts.second.to_sym] : nil)}reject {|section| hide_sections.include?(section[:yield]) }
+       {:yield => :body_content_right, :fallback => (@page.present? ? @page[Page.default_parts.second.to_sym] : nil)}.reject {|section| hide_sections.include?(section[:yield]) }
 
 Where you'll see I added "body_content_sidebar". And of course you could set the fallback to whatever you like.
 
@@ -101,7 +101,7 @@ Including the partial /shared/content_page is what causes all your content_for b
     <% content_for :body_content_sidebar do -%>
       blah
     <% end -%>
-  
+
 in this instance.
 
 ### Views
@@ -124,7 +124,7 @@ Just copy their theme directory into your themes folder and Refinery will see it
 
 ## How can I Convert my Current Views into a Theme?
 
-This should be fairly straightforward, just follow the directory structure outlined in 'The structure of a Theme'. 
+This should be fairly straightforward, just follow the directory structure outlined in 'The structure of a Theme'.
 
 But there is one important difference that need to be addressed to convert your current site into a theme.
 
@@ -149,7 +149,7 @@ This is the same with linking to Javascript and Stylesheets in your view. Say ou
 You just need to change that to:
 
     <%= stylesheet_link_tag 'application', :theme => true %>
-    
+
 ## I'm Stuck, is there an Example Theme?
 
 Yep, there is an example theme called "demolicious" that comes with Refinery located in ``/themes/demolicious``. If you find yourself getting stuck, just check out that theme and get a feel for how it works.
