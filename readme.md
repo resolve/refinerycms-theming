@@ -11,6 +11,17 @@ Think of a theme as your ``app/views`` directory with a few extra things like im
 
 It's worth noting you don't need to use a theme if you don't want to. Placing files in the ``app/views`` directory like any other Rails app will work just fine. It's only if you want to wrap your design up into a single location that you would use a theme or allow your client to easily change between designs.
 
+## How do I make my own Theme?
+
+__Uncomment the gem 'refinerycms-theming' in your project's Gemfile & run ``bundle install``__
+
+Then, simply use the Theme generator to make the basic structure of a new theme.
+
+    rails generate refinery_theme name_of_theme
+
+Don't forget to "activate" this new theme by setting the theme setting to the name of this new theme. The __first__ time you create a theme, this setting will be created and set for you. If you already have a theme from an earlier project but no setting, you can create it manually in the __refinery admin / settings__ section. __The setting name is ``theme``__.
+
+
 ## The Structure of a Theme
 
 Themes sit in your Rails app like this
@@ -59,17 +70,43 @@ Same with javascripts, just what you normally have in ``public/javascripts`` but
 
 The ``README`` file is just a description of your theme.
 
+### Partials && /shared Content
+
+In the default views, you will notice lines such as:
+  
+    <%= render :partial => '/shared/header' %>
+
+These are built-in partials for RefineryCMS. To __override__ these partials, run the command:
+
+    rake refinery:override view=shared/* theme=theme-name
+
+__theme=theme-name is optional__ but is convenient for keeping things together.
+
+
+### content_for :body\_content\_title, :body\_content\_left, etc.
+
+These are the default sections built up in __/shared/\_content\_page.html.erb__
+You can add your own sections or rename these as you'd like. Say you wanted to add a left side bar, you could modify the __/shared/\_content\_page partial__ like so:
+
+    sections = [
+       {:yield => :body_content_title, :fallback => page_title, :id => 'body_content_page_title', :title => true},
+       {:yield => :body_content_sidebar, :fallback => nil},
+       {:yield => :body_content_left, :fallback => (@page.present? ? @page[Page.default_parts.first.to_sym] : nil)},
+       {:yield => :body_content_right, :fallback => (@page.present? ? @page[Page.default_parts.second.to_sym] : nil)}reject {|section| hide_sections.include?(section[:yield]) }
+
+Where you'll see I added "body_content_sidebar". And of course you could set the fallback to whatever you like.
+
+Including the partial /shared/content_page is what causes all your content_for blocks to work. So you would use
+
+    <% content_for :body_content_sidebar do -%>
+      blah
+    <% end -%>
+  
+in this instance.
+
 ### Views
 
 This is exactly the same as how you lay your views out in ``app/views/`` just instead of putting them in ``app/views/`` you put them into ``themes/mytheme/views/``
-
-## How do I make my own Theme?
-
-Simply use the Theme generator to make the basic structure of a new theme.
-
-    rails generate refinery_theme name_of_theme
-
-Don't forget to "activate" this new theme by setting the theme setting to the name of this new theme.
 
 ## How do I select which Theme Refinery should use?
 
