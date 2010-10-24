@@ -16,7 +16,7 @@ module Refinery
           # add back theme paths if there is a theme present.
           if (theme = ::Theme.current_theme(request.env)).present?
             # Set up view path again for the current theme.
-            view_paths.unshift Rails.root.join("themes", theme, "views").to_s
+            view_paths.unshift ::Theme.current_theme_dir.join("views").to_s
 
             # Ensure that routes within the application are top priority.
             # Here we grab all the routes that are under the application's view folder
