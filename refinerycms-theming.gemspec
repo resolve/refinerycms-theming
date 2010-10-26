@@ -1,8 +1,8 @@
 Gem::Specification.new do |s|
   s.name              = %q{refinerycms-theming}
-  s.version           = %q{0.9.8.1}
+  s.version           = %q{0.9.8.2}
   s.description       = %q{Theming functionality for the Refinery CMS project, extracted from Refinery CMS core.}
-  s.date              = %q{2010-09-28}
+  s.date              = %q{2010-10-27}
   s.summary           = %q{Theming functionality for the Refinery CMS project.}
   s.email             = %q{info@refinerycms.com}
   s.homepage          = %q{http://refinerycms.com}
