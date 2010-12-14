@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-version = '0.9.8.2'
+version = '0.9.9'
 raise "Could not get version so gemspec can not be built" if version.nil?
 files = Dir[%q{**/*}].flatten.reject{|f| f =~ /\.gem$/}
 
@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
     '#{Dir.glob("test/**/*.rb").join("',\n    '")}'
   ]" if File.directory?("test")}
 
-  s.add_dependency('refinerycms', '>= 0.9.8')
+  s.add_dependency('refinerycms', '>= 0.9.9')
 end
 EOF
 
