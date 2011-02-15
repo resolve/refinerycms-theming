@@ -1,8 +1,8 @@
 Gem::Specification.new do |s|
   s.name              = %q{refinerycms-theming}
-  s.version           = %q{0.9.9}
+  s.version           = %q{0.9.9.1}
   s.description       = %q{Theming functionality for the Refinery CMS project, extracted from Refinery CMS core.}
-  s.date              = %q{2010-12-15}
+  s.date              = %q{2011-02-16}
   s.summary           = %q{Theming functionality for the Refinery CMS project.}
   s.email             = %q{info@refinerycms.com}
   s.homepage          = %q{http://refinerycms.com}
@@ -26,6 +26,8 @@ Gem::Specification.new do |s|
     'lib/generators/refinery_theme/README',
     'lib/generators/refinery_theme/refinery_theme_generator.rb',
     'lib/generators/refinery_theme/templates',
+    'lib/generators/refinery_theme/templates/javascripts',
+    'lib/generators/refinery_theme/templates/javascripts/application.js',
     'lib/generators/refinery_theme/templates/stylesheets',
     'lib/generators/refinery_theme/templates/stylesheets/application.css',
     'lib/generators/refinery_theme/templates/stylesheets/formatting.css',

@@ -1,8 +1,8 @@
 class RefineryThemeGenerator < Rails::Generators::Base
-  source_root File.expand_path('../templates', __FILE__)  
+  source_root File.expand_path('../templates', __FILE__)
   argument :theme_name, :type => :string
 
-  def create_theme
+  def generate
     copy_file "stylesheets/application.css", "themes/#{theme_name}/stylesheets/application.css"
     copy_file "stylesheets/formatting.css", "themes/#{theme_name}/stylesheets/formatting.css"
     copy_file "stylesheets/home.css", "themes/#{theme_name}/stylesheets/home.css"
@@ -11,6 +11,8 @@ class RefineryThemeGenerator < Rails::Generators::Base
 
     copy_file "views/pages/show.html.erb", "themes/#{theme_name}/views/pages/show.html.erb"
     copy_file "views/pages/home.html.erb", "themes/#{theme_name}/views/pages/home.html.erb"
+
+    copy_file "javascripts/application.js", "themes/#{theme_name}/javascripts/application.js"
 
     if RefinerySetting.get(:theme).nil?
       RefinerySetting.set(:theme, theme_name)

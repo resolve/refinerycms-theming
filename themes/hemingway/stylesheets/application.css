@@ -661,10 +661,10 @@ img.alignleft {
 
 /*
 Firefox Dotted Line Fix
-	- http://sonspring.com/journal/removing-dotted-links
+  - http://sonspring.com/journal/removing-dotted-links
 */
 a:focus {
-	outline: none;
+  outline: none;
 }
 
 /*
@@ -673,19 +673,19 @@ Clearfix docs
  - IE7 change: http://www.456bereastreet.com/archive/200603/new_clearing_method_needed_for_ie7/
 */
 .clearfix:after {
-	content: ".";
-	display: block;
-	height: 0;
-	clear: both;
-	visibility: hidden;
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
 }
 .clearfix {
-	display: inline-block;
+  display: inline-block;
 }
 
 /* Hide from IE Mac \*/
 .clearfix {
-	display:block;
+  display:block;
 }
 /* End hide from IE Mac */
 
@@ -696,11 +696,11 @@ display: block;
 }
 
 .inquiries .field {
-	margin: 12px 0px;
+  margin: 12px 0px;
 }
 
 .inquiries form {
-	padding-top: 12px;
+  padding-top: 12px;
 }
 
 .page_not_live {

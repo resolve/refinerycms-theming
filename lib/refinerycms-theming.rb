@@ -74,6 +74,13 @@ module Refinery
       end
     end
 
+    config.after_initialize do
+      ::Refinery::Plugin.register do |plugin|
+        plugin.name = "refinerycms_theming_plugin"
+        plugin.version = '0.9.9.1'
+      end
+    end
+
     initializer 'themes.middleware' do |app|
       app.config.middleware.insert_before ::ActionDispatch::Static, ::Refinery::ThemeServer
     end
