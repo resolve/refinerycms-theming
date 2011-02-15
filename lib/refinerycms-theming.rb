@@ -77,7 +77,8 @@ module Refinery
     config.after_initialize do
       ::Refinery::Plugin.register do |plugin|
         plugin.name = "refinerycms_theming_plugin"
-        plugin.version = '0.9.9.1'
+        plugin.version = '0.9.9.2'
+        plugin.hide_from_menu = true
       end
     end
 

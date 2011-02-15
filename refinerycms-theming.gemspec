@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name              = %q{refinerycms-theming}
-  s.version           = %q{0.9.9.1}
+  s.version           = %q{0.9.9.2}
   s.description       = %q{Theming functionality for the Refinery CMS project, extracted from Refinery CMS core.}
   s.date              = %q{2011-02-16}
   s.summary           = %q{Theming functionality for the Refinery CMS project.}
