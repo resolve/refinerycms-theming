@@ -1,4 +1,7 @@
+require 'refinerycms-core'
+
 require File.expand_path('../theming', __FILE__)
+require File.expand_path('../theme', __FILE__)
 
 module Refinery
   class ThemingEngine < ::Rails::Engine
@@ -77,13 +80,13 @@ module Refinery
     config.after_initialize do
       ::Refinery::Plugin.register do |plugin|
         plugin.name = "refinerycms_theming_plugin"
-        plugin.version = '0.9.9.2'
+        plugin.version = '1.0.0'
         plugin.hide_from_menu = true
       end
     end
 
     initializer 'themes.middleware' do |app|
-      app.config.middleware.insert_before ::ActionDispatch::Static, ::Refinery::ThemeServer
+      app.config.middleware.insert_after ::Rack::Lock, ::Refinery::ThemeServer
     end
 
   end

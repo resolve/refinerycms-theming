@@ -1,4 +1,4 @@
-# Serves theme files from the theme directory without touching Rails too much
+# Serves theme files from the theme directory without touching Rails.
 module Refinery
   class ThemeServer
 

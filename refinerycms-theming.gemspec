@@ -1,8 +1,8 @@
 Gem::Specification.new do |s|
   s.name              = %q{refinerycms-theming}
-  s.version           = %q{0.9.9.2}
+  s.version           = %q{1.0.0}
   s.description       = %q{Theming functionality for the Refinery CMS project, extracted from Refinery CMS core.}
-  s.date              = %q{2011-02-16}
+  s.date              = %q{2011-03-19}
   s.summary           = %q{Theming functionality for the Refinery CMS project.}
   s.email             = %q{info@refinerycms.com}
   s.homepage          = %q{http://refinerycms.com}
@@ -11,9 +11,6 @@ Gem::Specification.new do |s|
   s.require_paths     = %w(lib)
 
   s.files             = [
-    'app',
-    'app/models',
-    'app/models/theme.rb',
     'features',
     'features/step_definitions',
     'features/step_definitions/theme_generator_steps.rb',
@@ -39,8 +36,10 @@ Gem::Specification.new do |s|
     'lib/generators/refinery_theme/templates/views/pages/home.html.erb',
     'lib/generators/refinery_theme/templates/views/pages/show.html.erb',
     'lib/generators/refinery_theme/USAGE',
+    'lib/refinery',
+    'lib/refinery/theme_server.rb',
     'lib/refinerycms-theming.rb',
-    'lib/theme_server.rb',
+    'lib/theme.rb',
     'lib/theming.rb',
     'license.md',
     'readme.md',
@@ -85,5 +84,5 @@ Gem::Specification.new do |s|
   ]
   
 
-  s.add_dependency('refinerycms', '>= 0.9.9')
+  s.add_dependency('refinerycms-core', '>= 0.9.9.1')
 end
