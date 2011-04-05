@@ -1,8 +1,8 @@
 Gem::Specification.new do |s|
   s.name              = %q{refinerycms-theming}
-  s.version           = %q{1.0.0}
+  s.version           = %q{1.0.1}
   s.description       = %q{Theming functionality for the Refinery CMS project, extracted from Refinery CMS core.}
-  s.date              = %q{2011-03-19}
+  s.date              = %q{2011-04-05}
   s.summary           = %q{Theming functionality for the Refinery CMS project.}
   s.email             = %q{info@refinerycms.com}
   s.homepage          = %q{http://refinerycms.com}
@@ -84,5 +84,5 @@ Gem::Specification.new do |s|
   ]
   
 
-  s.add_dependency('refinerycms-core', '>= 0.9.9.1')
+  s.add_dependency('refinerycms-core', '>= 0.9.9.15')
 end
