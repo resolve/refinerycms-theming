@@ -1,3 +1,15 @@
+# USE OF THE REFINERYCMS-THEMING GEM IS NO LONGER RECOMMENDED.
+
+## Why?
+
+Theming performs some strange code hacks in order to get it to work. Therefore, it makes it difficult to keep it compatible with other engines. Also, many people have reported over 15 second load times with theming, whereas regularly you would get 3 second load times. Finally, Resolve Digital no longer uses nor supports this method.
+
+## What should I use instead?
+
+Use app/views for your views and public/ for stylesheets and javascripts, just like a normal Rails app.
+
+***
+
 # Themes
 
 ## Introduction
