@@ -48,6 +48,7 @@ module Refinery
           # inject /theme/ into the image tag src if this is themed.
           tag.gsub!(/src=[\"|\']/) { |m| "#{m}/theme/" }.gsub!("//", "/") if theme
           tag.gsub(/theme=(.+?)\ /, '') # we need to remove any addition of theme='false' etc.
+          tag.html_safe
         end
 
         def javascript_include_tag(*sources)
@@ -56,6 +57,7 @@ module Refinery
           # inject /theme/ into the javascript include tag src if this is themed.
           tag.gsub!(/\/javascripts\//, "/theme/javascripts/") if theme
           tag.gsub(/theme=(.+?)\ /, '') # we need to remove any addition of theme='false' etc.
+          tag.html_safe
         end
 
         def stylesheet_link_tag(*sources)
@@ -64,6 +66,7 @@ module Refinery
           # inject /theme/ into the stylesheet link tag href if this is themed.
           tag.gsub!(/\/stylesheets\//, "/theme/stylesheets/") if theme
           tag.gsub(/theme=(.+?)\ /, '') # we need to remove any addition of theme='false' etc.
+          tag.html_safe
         end
 
         def image_submit_tag(source, options = {})
@@ -73,6 +76,7 @@ module Refinery
           # inject /theme/ into the image tag src if this is themed.
           tag.gsub!(/src=[\"|\']/) { |m| "#{m}/theme/" }.gsub!("//", "/") if theme
           tag.gsub(/theme=(.+?)\ /, '') # we need to remove any addition of theme='false' etc.
+          tag.html_safe
         end
       end
     end
